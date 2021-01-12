@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS buổi 7-8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <form id="number__form">
+            <div class="card">
+              <div class="card-header h3 text-uppercase">
+                Bài tập JS buổi 7-8
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="number">Hãy nhập một số nguyên</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name=""
+                    id="number"
+                    aria-describedby="helpId"
+                    placeholder=""
+                  />
+                  <br />
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="appendArray(event)"
+                  >
+                    Thêm vào mảng
+                  </button>
+                  <h3 id="show__array">array = []</h3>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="positiveSum"
+                    >
+                      Tổng các số dương
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="positive__sum__result"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="positiveCount"
+                    >
+                      Đếm các số dương
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="positive__count__result"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="smallestNumber"
+                    >
+                      Số nhỏ nhất trong mảng
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="smallest__number__result"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="smallestPosNumber"
+                    >
+                      Số dương nhỏ nhất trong mảng
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="smallest__pos__number__result"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="lastEvenNumber"
+                    >
+                      Số chẵn cuối cùng trong mảng
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="last__even__number__result"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="number__1__position"
+                        >Vị trí giá trị thứ 1</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name=""
+                        id="number__1__position"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="number__2__position"
+                        >Vị trí giá trị thứ 2</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name=""
+                        id="number__2__position"
+                        aria-describedby="helpId"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="array__1"></h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="swapNumberPosition"
+                    >
+                      Đổi giá trị của 2 vị trí đã nhập
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="swapped__array__1"></h3>
+                  </div>
+                </div>
+                <hr />
+                <div class="row">
+                  <div class="col-md-6">
+                    <button
+                      type="button"
+                      class="btn btn-success"
+                      id="sortArray"
+                    >
+                      Sắp xếp mảng tăng dần
+                    </button>
+                  </div>
+                  <div class="col-md-6">
+                    <h3 id="sorted__array"></h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
